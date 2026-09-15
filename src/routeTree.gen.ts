@@ -10,33 +10,154 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as AppointmentRouteImport } from './routes/appointment'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as DepartmentsRouteImport } from './routes/departments'
+import { Route as DoctorsRouteImport } from './routes/doctors'
+import { Route as HealthPackagesRouteImport } from './routes/health-packages'
+import { Route as ServicesRouteImport } from './routes/services'
+import { Route as GalleryPhotosRouteImport } from './routes/gallery/photos'
+import { Route as GalleryVideosRouteImport } from './routes/gallery/videos'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppointmentRoute = AppointmentRouteImport.update({
+  id: '/appointment',
+  path: '/appointment',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DepartmentsRoute = DepartmentsRouteImport.update({
+  id: '/departments',
+  path: '/departments',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DoctorsRoute = DoctorsRouteImport.update({
+  id: '/doctors',
+  path: '/doctors',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HealthPackagesRoute = HealthPackagesRouteImport.update({
+  id: '/health-packages',
+  path: '/health-packages',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesRoute = ServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryPhotosRoute = GalleryPhotosRouteImport.update({
+  id: '/gallery/photos',
+  path: '/gallery/photos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryVideosRoute = GalleryVideosRouteImport.update({
+  id: '/gallery/videos',
+  path: '/gallery/videos',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/appointment': typeof AppointmentRoute
+  '/contact': typeof ContactRoute
+  '/departments': typeof DepartmentsRoute
+  '/doctors': typeof DoctorsRoute
+  '/health-packages': typeof HealthPackagesRoute
+  '/services': typeof ServicesRoute
+  '/gallery/photos': typeof GalleryPhotosRoute
+  '/gallery/videos': typeof GalleryVideosRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/appointment': typeof AppointmentRoute
+  '/contact': typeof ContactRoute
+  '/departments': typeof DepartmentsRoute
+  '/doctors': typeof DoctorsRoute
+  '/health-packages': typeof HealthPackagesRoute
+  '/services': typeof ServicesRoute
+  '/gallery/photos': typeof GalleryPhotosRoute
+  '/gallery/videos': typeof GalleryVideosRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/appointment': typeof AppointmentRoute
+  '/contact': typeof ContactRoute
+  '/departments': typeof DepartmentsRoute
+  '/doctors': typeof DoctorsRoute
+  '/health-packages': typeof HealthPackagesRoute
+  '/services': typeof ServicesRoute
+  '/gallery/photos': typeof GalleryPhotosRoute
+  '/gallery/videos': typeof GalleryVideosRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/appointment'
+    | '/contact'
+    | '/departments'
+    | '/doctors'
+    | '/health-packages'
+    | '/services'
+    | '/gallery/photos'
+    | '/gallery/videos'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/appointment'
+    | '/contact'
+    | '/departments'
+    | '/doctors'
+    | '/health-packages'
+    | '/services'
+    | '/gallery/photos'
+    | '/gallery/videos'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/appointment'
+    | '/contact'
+    | '/departments'
+    | '/doctors'
+    | '/health-packages'
+    | '/services'
+    | '/gallery/photos'
+    | '/gallery/videos'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  AppointmentRoute: typeof AppointmentRoute
+  ContactRoute: typeof ContactRoute
+  DepartmentsRoute: typeof DepartmentsRoute
+  DoctorsRoute: typeof DoctorsRoute
+  HealthPackagesRoute: typeof HealthPackagesRoute
+  ServicesRoute: typeof ServicesRoute
+  GalleryPhotosRoute: typeof GalleryPhotosRoute
+  GalleryVideosRoute: typeof GalleryVideosRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +169,83 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/appointment': {
+      id: '/appointment'
+      path: '/appointment'
+      fullPath: '/appointment'
+      preLoaderRoute: typeof AppointmentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/departments': {
+      id: '/departments'
+      path: '/departments'
+      fullPath: '/departments'
+      preLoaderRoute: typeof DepartmentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/doctors': {
+      id: '/doctors'
+      path: '/doctors'
+      fullPath: '/doctors'
+      preLoaderRoute: typeof DoctorsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/health-packages': {
+      id: '/health-packages'
+      path: '/health-packages'
+      fullPath: '/health-packages'
+      preLoaderRoute: typeof HealthPackagesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services': {
+      id: '/services'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery/photos': {
+      id: '/gallery/photos'
+      path: '/gallery/photos'
+      fullPath: '/gallery/photos'
+      preLoaderRoute: typeof GalleryPhotosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery/videos': {
+      id: '/gallery/videos'
+      path: '/gallery/videos'
+      fullPath: '/gallery/videos'
+      preLoaderRoute: typeof GalleryVideosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  AppointmentRoute: AppointmentRoute,
+  ContactRoute: ContactRoute,
+  DepartmentsRoute: DepartmentsRoute,
+  DoctorsRoute: DoctorsRoute,
+  HealthPackagesRoute: HealthPackagesRoute,
+  ServicesRoute: ServicesRoute,
+  GalleryPhotosRoute: GalleryPhotosRoute,
+  GalleryVideosRoute: GalleryVideosRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
