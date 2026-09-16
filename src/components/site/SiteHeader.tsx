@@ -47,7 +47,7 @@ export function SiteHeader() {
   };
 
   const linkClass =
-    "relative rounded-full px-3 py-2 text-sm font-semibold text-primary/80 transition-colors hover:text-accent";
+    "relative whitespace-nowrap rounded-full px-2.5 py-2 text-sm font-semibold text-primary/80 transition-colors hover:text-accent";
   const activeClass = "text-accent bg-secondary";
 
   return (
@@ -77,8 +77,8 @@ export function SiteHeader() {
           scrolled && "shadow-[0_10px_30px_-24px_oklch(0.28_0.065_252/0.6)]",
         )}
       >
-        <div className="shell grid grid-cols-[minmax(0,1fr)_auto] items-center gap-2 py-2.5 sm:gap-4 sm:py-3">
-          <Link to="/" onClick={closeAll} className="flex min-w-0 items-center gap-2.5 sm:gap-3">
+        <div className="shell flex flex-nowrap items-center justify-between gap-2 py-2.5 sm:gap-4 sm:py-3">
+          <Link to="/" onClick={closeAll} className="flex min-w-0 shrink-0 items-center gap-2.5 sm:gap-3">
             <span className="grid size-10 shrink-0 place-items-center rounded-xl gradient-teal text-primary-foreground shadow-teal-glow sm:size-11 sm:rounded-2xl">
               <Plus className="size-6" strokeWidth={3} />
             </span>
@@ -92,7 +92,7 @@ export function SiteHeader() {
             </span>
           </Link>
 
-          <nav className="hidden items-center gap-0.5 lg:flex">
+          <nav className="hidden flex-nowrap items-center gap-0 lg:flex">
             {NAV.map((item) => (
               <Link
                 key={item.to}
@@ -118,7 +118,7 @@ export function SiteHeader() {
               >
                 Gallery
                 <ChevronDown
-                  className={cn("size-4 transition-transform", galleryOpen && "rotate-180")}
+                  className={cn("size-4 shrink-0 transition-transform", galleryOpen && "rotate-180")}
                 />
               </button>
               <div
@@ -148,6 +148,13 @@ export function SiteHeader() {
             <Link to="/contact" className={linkClass} activeProps={{ className: activeClass }}>
               Contact
             </Link>
+
+            <Link
+              to="/appointment"
+              className="ml-2 shrink-0 whitespace-nowrap rounded-full gradient-teal px-4 py-2 text-sm font-semibold text-primary-foreground shadow-teal-glow transition-transform hover:-translate-y-0.5"
+            >
+              Book Appointment
+            </Link>
           </nav>
 
           <div className="flex shrink-0 items-center gap-1 sm:gap-2">
@@ -170,7 +177,7 @@ export function SiteHeader() {
             </a>
             <Link
               to="/appointment"
-              className="hidden rounded-full gradient-teal px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-teal-glow transition-transform hover:-translate-y-0.5 sm:inline-flex"
+              className="hidden rounded-full gradient-teal px-4 py-2 text-sm font-semibold text-primary-foreground shadow-teal-glow transition-transform hover:-translate-y-0.5 sm:inline-flex lg:hidden"
             >
               Book Appointment
             </Link>
