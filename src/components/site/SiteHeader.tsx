@@ -158,7 +158,7 @@ export function SiteHeader() {
           </nav>
 
           <div className="flex shrink-0 items-center gap-1 sm:gap-2">
-            <Link
+            {/* <Link
               to="/contact"
               onClick={closeAll}
               className="flex w-11 flex-col items-center gap-0.5 text-[8px] font-semibold text-muted-foreground sm:hidden"
@@ -174,7 +174,7 @@ export function SiteHeader() {
                 <Plus className="size-3" strokeWidth={3} />
               </span>
               Emergency
-            </a>
+            </a> */}
             <Link
               to="/appointment"
               className="hidden rounded-full gradient-teal px-4 py-2 text-sm font-semibold text-primary-foreground shadow-teal-glow transition-transform hover:-translate-y-0.5 sm:inline-flex lg:hidden"
