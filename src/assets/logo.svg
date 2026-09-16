@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Outer crimson ring -->
+  <circle cx="100" cy="100" r="98" fill="#8B1A1A" />
+  <!-- Navy fill -->
+  <circle cx="100" cy="100" r="93" fill="#1B2A6B" />
+  <!-- White ring separator -->
+  <circle cx="100" cy="100" r="70" fill="white" />
+  <!-- Inner crimson accent ring -->
+  <circle cx="100" cy="100" r="68" fill="none" stroke="#8B1A1A" stroke-width="3" />
+
+  <!-- Caduceus wings - crimson/navy layered feathers (left wing) -->
+  <g transform="translate(100,80)">
+    <!-- Left wing feathers -->
+    <polygon points="-4,-8 -40,-30 -36,-22" fill="#8B1A1A" opacity="0.9"/>
+    <polygon points="-4,-8 -38,-20 -34,-13" fill="#1B2A6B" opacity="0.85"/>
+    <polygon points="-4,-8 -34,-12 -30,-6" fill="#8B1A1A" opacity="0.9"/>
+    <polygon points="-4,-8 -28,-6 -24,0" fill="#1B2A6B" opacity="0.85"/>
+    <polygon points="-4,-8 -22,0 -18,5" fill="#8B1A1A" opacity="0.9"/>
+    <!-- Right wing feathers (mirrored) -->
+    <polygon points="4,-8 40,-30 36,-22" fill="#8B1A1A" opacity="0.9"/>
+    <polygon points="4,-8 38,-20 34,-13" fill="#1B2A6B" opacity="0.85"/>
+    <polygon points="4,-8 34,-12 30,-6" fill="#8B1A1A" opacity="0.9"/>
+    <polygon points="4,-8 28,-6 24,0" fill="#1B2A6B" opacity="0.85"/>
+    <polygon points="4,-8 22,0 18,5" fill="#8B1A1A" opacity="0.9"/>
+    <!-- Caduceus staff -->
+    <line x1="0" y1="-15" x2="0" y2="60" stroke="#1B2A6B" stroke-width="3" stroke-linecap="round"/>
+    <!-- Ball atop -->
+    <circle cx="0" cy="-18" r="3.5" fill="#1B2A6B"/>
+    <!-- Left snake -->
+    <path d="M-3,-10 C-14,5 -14,20 -3,30 C-14,40 -14,55 -3,60" fill="none" stroke="#1B2A6B" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Right snake -->
+    <path d="M3,-10 C14,5 14,20 3,30 C14,40 14,55 3,60" fill="none" stroke="#1B2A6B" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- "KIRC CAMPUS" text below symbol -->
+  <text x="100" y="166" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#1B2A6B" letter-spacing="1">KIRC CAMPUS</text>
+
+  <!-- Arc text "ADARSH MULTISPECIALITY HOSPITAL" -->
+  <defs>
+    <path id="topArc" d="M 15,100 A 85,85 0 1,1 185,100"/>
+    <path id="bottomArc" d="M 20,115 A 80,80 0 0,0 180,115"/>
+  </defs>
+  <text font-family="Arial, sans-serif" font-size="10.5" font-weight="bold" fill="white" letter-spacing="2">
+    <textPath href="#topArc" startOffset="3%">ADARSH MULTISPECIALITY HOSPITAL</textPath>
+  </text>
+
+  <!-- Bottom "• KALOL •" text -->
+  <text font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="white" letter-spacing="3">
+    <textPath href="#bottomArc" startOffset="22%">• KALOL •</textPath>
+  </text>
+</svg>
