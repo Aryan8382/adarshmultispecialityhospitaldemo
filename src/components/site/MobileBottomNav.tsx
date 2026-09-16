@@ -57,7 +57,7 @@ export function MobileBottomNav() {
         <span className="relative flex size-12 items-center justify-center rounded-full bg-red-600 text-white shadow-[0_10px_24px_-6px_rgba(220,38,38,0.65)] ring-4 ring-background/90 transition-transform active:scale-95">
           <PhoneCall className="size-6" strokeWidth={2.2} />
         </span>
-        <span className="mt-0.5 text-[9px] font-bold text-red-600">Call Now</span>
+        <span className="mt-1 text-[9px] font-bold text-red-600">Call Now</span>
       </a>
 
       {rightItems.map((item) => navLink(item))}
