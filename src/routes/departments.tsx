@@ -44,7 +44,8 @@ function Departments() {
           <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {DEPARTMENTS.map((d) => {
               const Icon = getIcon(d.icon);
-              const doctors = DOCTORS.filter((doc) => doc.department.includes(d.name.split(" ")[0]));
+              const departmentKey = d.name.split(" ")[0] ?? d.name;
+              const doctors = DOCTORS.filter((doc) => doc.department.includes(departmentKey));
               return (
                 <article key={d.slug} className="surface-card flex flex-col p-6">
                   <span className="grid size-12 place-items-center rounded-2xl bg-secondary text-accent">

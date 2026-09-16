@@ -4,6 +4,7 @@ import heroImg from "@/assets/hero-hospital.jpg";
 import aboutTeam from "@/assets/about-team.jpg";
 import { SectionHeading } from "@/components/site/PageHero";
 import { DoctorCard } from "@/components/site/DoctorCard";
+import { MobileHome } from "@/components/site/MobileHome";
 import { getIcon } from "@/components/site/icon-map";
 import {
   DEPARTMENTS,
@@ -38,7 +39,8 @@ export const Route = createFileRoute("/")({
 function Home() {
   return (
     <>
-      <section className="relative overflow-hidden gradient-navy text-primary-foreground">
+      <MobileHome />
+      <section className="relative hidden overflow-hidden gradient-navy text-primary-foreground md:block">
         <div
           className="pointer-events-none absolute -right-32 top-0 size-96 rounded-full bg-accent/25 blur-3xl"
           aria-hidden
