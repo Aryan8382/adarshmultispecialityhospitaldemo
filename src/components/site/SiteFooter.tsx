@@ -15,7 +15,7 @@ const quickLinks = [
 
 export function SiteFooter() {
   return (
-    <footer className="gradient-navy text-primary-foreground">
+    <footer className="hidden gradient-navy text-primary-foreground md:block">
       <div className="shell grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-4">
         <div>
           <div className="flex items-center gap-3">

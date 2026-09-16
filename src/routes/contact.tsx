@@ -40,11 +40,11 @@ function Contact() {
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
     const next: Record<string, string> = {};
-    if (values.name.trim().length < 3) next.name = "Please enter your full name.";
-    if (!/^[+\d][\d\s-]{7,15}$/.test(values.phone.trim())) next.phone = "Enter a valid phone number.";
+    if (values.name.trim().length < 3) next["name"] = "Please enter your full name.";
+    if (!/^[+\d][\d\s-]{7,15}$/.test(values.phone.trim())) next["phone"] = "Enter a valid phone number.";
     if (values.email && !/^\S+@\S+\.\S+$/.test(values.email.trim()))
-      next.email = "Enter a valid email address.";
-    if (values.message.trim().length < 10) next.message = "Please add a few more details.";
+      next["email"] = "Enter a valid email address.";
+    if (values.message.trim().length < 10) next["message"] = "Please add a few more details.";
     setErrors(next);
     if (Object.keys(next).length) {
       toast.error("Please correct the highlighted fields.");
@@ -105,7 +105,7 @@ function Contact() {
                     value={values.name}
                     onChange={(e) => set("name", e.target.value)}
                   />
-                  {errors.name && <p className="mt-1.5 text-xs text-destructive">{errors.name}</p>}
+                  {errors["name"] && <p className="mt-1.5 text-xs text-destructive">{errors["name"]}</p>}
                 </div>
                 <div>
                   <label htmlFor="cphone" className="mb-1.5 block text-sm font-semibold text-primary">
@@ -118,7 +118,7 @@ function Contact() {
                     value={values.phone}
                     onChange={(e) => set("phone", e.target.value)}
                   />
-                  {errors.phone && <p className="mt-1.5 text-xs text-destructive">{errors.phone}</p>}
+                  {errors["phone"] && <p className="mt-1.5 text-xs text-destructive">{errors["phone"]}</p>}
                 </div>
                 <div>
                   <label htmlFor="cemail" className="mb-1.5 block text-sm font-semibold text-primary">
@@ -131,7 +131,7 @@ function Contact() {
                     value={values.email}
                     onChange={(e) => set("email", e.target.value)}
                   />
-                  {errors.email && <p className="mt-1.5 text-xs text-destructive">{errors.email}</p>}
+                  {errors["email"] && <p className="mt-1.5 text-xs text-destructive">{errors["email"]}</p>}
                 </div>
                 <div>
                   <label
@@ -163,8 +163,8 @@ function Contact() {
                     value={values.message}
                     onChange={(e) => set("message", e.target.value)}
                   />
-                  {errors.message && (
-                    <p className="mt-1.5 text-xs text-destructive">{errors.message}</p>
+                  {errors["message"] && (
+                    <p className="mt-1.5 text-xs text-destructive">{errors["message"]}</p>
                   )}
                 </div>
               </div>

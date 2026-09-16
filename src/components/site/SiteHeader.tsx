@@ -77,16 +77,16 @@ export function SiteHeader() {
           scrolled && "shadow-[0_10px_30px_-24px_oklch(0.28_0.065_252/0.6)]",
         )}
       >
-        <div className="shell flex items-center justify-between gap-4 py-3">
-          <Link to="/" onClick={closeAll} className="flex items-center gap-3">
-            <span className="grid size-11 place-items-center rounded-2xl gradient-teal text-primary-foreground shadow-teal-glow">
+        <div className="shell grid grid-cols-[minmax(0,1fr)_auto] items-center gap-2 py-2.5 sm:gap-4 sm:py-3">
+          <Link to="/" onClick={closeAll} className="flex min-w-0 items-center gap-2.5 sm:gap-3">
+            <span className="grid size-10 shrink-0 place-items-center rounded-xl gradient-teal text-primary-foreground shadow-teal-glow sm:size-11 sm:rounded-2xl">
               <Plus className="size-6" strokeWidth={3} />
             </span>
-            <span className="leading-tight">
-              <span className="block font-display text-base font-bold text-primary sm:text-lg">
+            <span className="min-w-0 leading-tight">
+              <span className="block truncate font-display text-sm font-bold text-primary sm:text-lg">
                 Aadarsh
               </span>
-              <span className="block text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground sm:text-[11px]">
+              <span className="block truncate text-[8px] font-semibold uppercase tracking-[0.12em] text-muted-foreground sm:text-[11px] sm:tracking-[0.18em]">
                 Multispeciality Hospital
               </span>
             </span>
@@ -150,7 +150,24 @@ export function SiteHeader() {
             </Link>
           </nav>
 
-          <div className="flex items-center gap-2">
+          <div className="flex shrink-0 items-center gap-1 sm:gap-2">
+            <Link
+              to="/contact"
+              onClick={closeAll}
+              className="flex w-11 flex-col items-center gap-0.5 text-[8px] font-semibold text-muted-foreground sm:hidden"
+            >
+              <Phone className="size-4 text-primary" />
+              Contact
+            </Link>
+            <a
+              href={`tel:${HOSPITAL.emergency.replace(/\s/g, "")}`}
+              className="flex w-12 flex-col items-center gap-0.5 text-[8px] font-semibold text-destructive sm:hidden"
+            >
+              <span className="grid size-5 place-items-center rounded-full bg-destructive text-destructive-foreground">
+                <Plus className="size-3" strokeWidth={3} />
+              </span>
+              Emergency
+            </a>
             <Link
               to="/appointment"
               className="hidden rounded-full gradient-teal px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-teal-glow transition-transform hover:-translate-y-0.5 sm:inline-flex"
@@ -161,7 +178,7 @@ export function SiteHeader() {
               type="button"
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
               onClick={() => setMobileOpen((v) => !v)}
-              className="grid size-11 place-items-center rounded-2xl border border-border bg-card text-primary lg:hidden"
+              className="grid size-10 place-items-center rounded-xl border border-border bg-card text-primary lg:hidden"
             >
               {mobileOpen ? <X className="size-5" /> : <Menu className="size-5" />}
             </button>
